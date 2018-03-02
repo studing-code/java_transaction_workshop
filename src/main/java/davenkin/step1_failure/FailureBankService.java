@@ -34,6 +34,7 @@ public class FailureBankService implements BankService{
             connection.commit();
         } catch (Exception e) {
             try {
+                //断言机制,如果connection为空,则抛异常
                 assert connection != null;
                 connection.rollback();
             } catch (SQLException e1) {

@@ -19,10 +19,10 @@ public class DataSourceFactory
 
     static
     {
-        dataSource.setDriverClassName("org.hsqldb.jdbcDriver");
-        dataSource.setUsername("SA");
-        dataSource.setPassword("");
-        dataSource.setUrl("jdbc:hsqldb:mem:bank");
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setUsername("root");
+        dataSource.setPassword("oaec");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/studytrans?useUnicode=true&characterEncoding=utf8");
     }
 
     public static DataSource createDataSource()

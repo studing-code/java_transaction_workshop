@@ -46,7 +46,7 @@ public class FailureBankServiceTest extends BankFixture
         int toNonExistId = 3333;
         bankService.transfer(1111, toNonExistId, 200);
 
-        assertEquals(1000, getInsuranceAmount(2222));
         assertEquals(800, getBankAmount(1111));
+        assertEquals(1000, getInsuranceAmount(2222));
     }
 }

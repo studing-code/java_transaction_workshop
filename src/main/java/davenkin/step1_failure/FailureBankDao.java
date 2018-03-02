@@ -12,6 +12,8 @@ import java.sql.SQLException;
  * Date: 2/7/13
  * Time: 7:19 PM
  * To change this template use File | Settings | File Templates.
+ *
+ * 银行账户
  */
 public class FailureBankDao {
     private DataSource dataSource;
@@ -21,6 +23,13 @@ public class FailureBankDao {
     }
 
 
+    /**
+     * 从银行账户表（BANK_ACCOUNT）中帐号为bankId的用户账户中取出数量为amount的金额。
+     *
+     * @param bankId 账户号
+     * @param amount 取出金额
+     * @throws SQLException
+     */
     public void withdraw(int bankId, int amount) throws SQLException {
         Connection connection = dataSource.getConnection();
         PreparedStatement selectStatement = connection.prepareStatement("SELECT BANK_AMOUNT FROM BANK_ACCOUNT WHERE BANK_ID = ?");

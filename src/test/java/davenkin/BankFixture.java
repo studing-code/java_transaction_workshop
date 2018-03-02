@@ -23,8 +23,8 @@ public class BankFixture
         Connection connection = dataSource.getConnection();
         Statement statement = connection.createStatement();
 
-        statement.execute("DROP TABLE BANK_ACCOUNT IF EXISTS");
-        statement.execute("DROP TABLE INSURANCE_ACCOUNT IF EXISTS");
+        statement.execute("DROP TABLE IF EXISTS BANK_ACCOUNT");
+        statement.execute("DROP TABLE IF EXISTS INSURANCE_ACCOUNT");
         statement.execute("CREATE TABLE BANK_ACCOUNT (\n" +
                 "BANK_ID INT,\n" +
                 "BANK_AMOUNT INT,\n" +

@@ -12,6 +12,8 @@ import java.sql.SQLException;
  * Date: 2/7/13
  * Time: 8:01 PM
  * To change this template use File | Settings | File Templates.
+ *
+ * 保险账户
  */
 public class FailureInsuranceDao {
     private DataSource dataSource;
