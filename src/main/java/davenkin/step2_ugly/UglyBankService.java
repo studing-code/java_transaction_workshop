@@ -13,6 +13,11 @@ import java.sql.SQLException;
  * Time: 8:17 PM
  * To change this template use File | Settings | File Templates.
  */
+
+/**
+ * 将Server层的Connection传递到两个Dao层,以保持三方使用同一个连接,从而达到事务处理的目的.
+ * 但是这种做法是丑陋的,因为这样的做法造成了典型的API污染.
+ */
 public class UglyBankService implements BankService {
     private DataSource dataSource;
     private UglyBankDao uglyBankDao;

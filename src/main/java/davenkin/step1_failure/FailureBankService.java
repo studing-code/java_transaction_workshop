@@ -13,6 +13,11 @@ import java.sql.SQLException;
  * Time: 10:07 PM
  * To change this template use File | Settings | File Templates.
  */
+
+/**
+ * 三方使用了各自的Connection,而事务是基于Connection的.
+ * 这样就导致即使Dao层发生了异常,却没有调用Service层的回滚.
+ */
 public class FailureBankService implements BankService{
     private FailureBankDao failureBankDao;
     private FailureInsuranceDao failureInsuranceDao;
