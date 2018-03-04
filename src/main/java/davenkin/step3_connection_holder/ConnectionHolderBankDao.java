@@ -24,6 +24,7 @@ public class ConnectionHolderBankDao
 
     public void withdraw(int bankId, int amount) throws SQLException
     {
+        // 保证每个Connection都是各自线程中独有的,从而避免Connection的共享.
         Connection connection = SingleThreadConnectionHolder.getConnection(dataSource);
         PreparedStatement selectStatement = connection.prepareStatement("SELECT BANK_AMOUNT FROM BANK_ACCOUNT WHERE BANK_ID = ?");
         selectStatement.setInt(1, bankId);

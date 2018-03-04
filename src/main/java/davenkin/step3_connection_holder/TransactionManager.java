@@ -4,6 +4,10 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+/**
+ * 事务管理类
+ * 将事务的操作提取出来
+ */
 public class TransactionManager
 {
     private DataSource dataSource;
